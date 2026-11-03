@@ -1,0 +1,5 @@
+mayhem/build-fuzz/
+mayhem/build-test/
+.DS_Store
+*.swp
+*~

@@ -1,0 +1,9 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_pem_key
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_pem_key/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_pem_key
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_pem_key/fuzz_pem_key.dict

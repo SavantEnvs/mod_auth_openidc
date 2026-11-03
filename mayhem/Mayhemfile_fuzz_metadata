@@ -1,0 +1,9 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_metadata
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_metadata/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_metadata
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_metadata/fuzz_metadata.dict

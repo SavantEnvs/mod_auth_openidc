@@ -1,0 +1,9 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_redirect_uri
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_redirect_uri/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_redirect_uri
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_redirect_uri/fuzz_redirect_uri.dict

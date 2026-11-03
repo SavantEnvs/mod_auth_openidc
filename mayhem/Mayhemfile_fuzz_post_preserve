@@ -1,0 +1,9 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_post_preserve
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_post_preserve/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_post_preserve
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_post_preserve/fuzz_post_preserve.dict

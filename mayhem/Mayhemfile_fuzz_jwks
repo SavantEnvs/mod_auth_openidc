@@ -1,0 +1,9 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_jwks
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_jwks/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_jwks
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_jwks/fuzz_jwks.dict

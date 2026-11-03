@@ -1,0 +1,9 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_authz_response
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_authz_response/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_authz_response
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_authz_response/fuzz_authz_response.dict

@@ -1,0 +1,8 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_form_params
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_form_params/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_form_params
+    libfuzzer: true

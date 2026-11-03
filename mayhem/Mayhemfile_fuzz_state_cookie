@@ -1,0 +1,9 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_state_cookie
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_state_cookie/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_state_cookie
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_state_cookie/fuzz_state_cookie.dict

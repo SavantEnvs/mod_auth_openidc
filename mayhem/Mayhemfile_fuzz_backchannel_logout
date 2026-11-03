@@ -1,0 +1,9 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_backchannel_logout
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_backchannel_logout/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_backchannel_logout
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_backchannel_logout/fuzz_backchannel_logout.dict

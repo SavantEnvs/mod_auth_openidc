@@ -1,0 +1,9 @@
+project: savantenvs/mod_auth_openidc
+target: fuzz_state_cookies-mined-4301b53
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_state_cookies-mined-4301b53/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_state_cookies
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_state_cookies-mined-4301b53/fuzz_state_cookies.dict
